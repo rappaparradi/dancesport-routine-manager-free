@@ -1,0 +1,607 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="app_name">Dancesport Routine Manager 1.0</string>
+    <string name="NewRoutine">New Routine</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="btNewFigure">New Figure</string>
+    <string name="btAddFigures">Insert Figures</string>
+    <string name="btMenuLatin">Latin</string>
+    <string name="btMenuStandard">Standard</string>
+    <string name="btMenuSamba">Samba</string>
+    <string name="btMenuChaCha">Cha Cha Cha</string>
+    <string name="btMenuRumba">Rumba</string>
+    <string name="btMenuPasoDoble">Paso Doble</string>
+    <string name="btMenuJive">Jive</string>
+    <string name="btMenuWaltz">Waltz</string>
+    <string name="btMenuTango">Tango</string>
+    <string name="btMenuVienneseWaltz">Viennese Waltz</string>
+    <string name="btMenuFoxtrot">Foxtrot</string>
+    <string name="btMenuQuickstep">Quickstep</string>
+    <string name="btNewRoutine">New Routine</string>
+
+    <style name="ButtonText">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_margin">3dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="ButtonTextActionBar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="ActionBarBackButton">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="TextMainRoutineList">
+        <item name="android:textColor">#333</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#ffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="TextGrayRoutineList">
+        <item name="android:textColor">#414347</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:shadowColor">#ffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="TextRoutinesTRanspTitle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:textSize">14dp</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">4dp</item>
+        <item name="android:paddingBottom">4dp</item>
+    </style>
+
+    <style name="TextYTlink">
+        <item name="android:textColor">#414347</item>
+        <item name="android:textSize">17dp</item>
+        <item name="android:shadowColor">#ffffff</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="CurDanceCharStyle">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">2</item>
+    </style>
+
+    <style name="OrangeSmallStyle">
+        <item name="android:textColor">#f3ae1b</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <style name="BlueSmallStyle">
+        <item name="android:textColor">#449def</item>
+        <item name="android:textSize">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:shadowColor">#000000</item>
+        <item name="android:shadowDx">1</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+    </style>
+
+    <string name="btSubmitSelectedFigures">Select</string>
+    <string name="timing">Timing</string>
+    <string name="comment">Comment</string>
+    <string name="save">Save</string>
+    <string name="and">and</string>
+    <string name="saving">Saving&#8230;</string>
+    <string name="saving_question">Save the changes?</string>
+    <string name="deleting">Deleting&#8230;</string>
+    <string name="Yes">Yes</string>
+    <string name="No">No</string>
+    <string name="deleting_question">Delete?</string>
+    <string name="Saved">Saved</string>
+    <string name="DidNotSave">Did not save</string>
+    <string name="Deleted">Deleted</string>
+    <string name="Search">Search</string>
+    <string name="Routine">Routine</string>
+    <string name="iscreated">is created</string>
+    <string name="ismodified">is modified</string>
+    <string name="login_activity_username_label">Log in</string>
+    <string name="login_activity_label">Authenticatation</string>
+    <string name="login_activity_password_label">Password</string>
+    <string name="login_activity_ok_button">OK</string>
+    <string name="login_activity_loginfail_text_both">Please enter a valid username/password.</string>
+    <string name="login_activity_loginfail_text_pwonly">Please enter a valid password.</string>
+    <string name="login_activity_newaccount_text">If no username, then we ask the user to log in</string>
+    <string name="login_activity_loginfail_text_pwmissing">We have an account but no password</string>
+    <string name="pref_key_flag_sex">Sex</string>
+    <string name="pref_title_sex_flag">Sex</string>
+    <string name="settings">Preferences</string>
+    <string name="mans_part">Man\'s part</string>
+    <string name="womans_part">Lady\'s part</string>
+    <string name="created">Created:</string>
+    <string name="modified">Modified:</string>
+    <string name="linktoth_yt_vid">Link to the YouTube video</string>
+    <string name="play">Play</string>
+    <string name="change_link">Change link</string>
+    <string name="paste_here">Paste here URL of the YT video&#8230;</string>
+    <string name="edit_tytle">Edite Title</string>
+    <string name="edit_routine">Edite Routine</string>
+    <string name="importstr">Import</string>
+    <string name="import_dbforimport_notfound">On SD-card folder dancesport-routine-manager didn\'t find any database file with actual version for import&#8230;</string>
+    <string name="import_dbforimport_toomanyfiles">On SD-card folder dancesport-routine-manager leave a single database file for import&#8230;</string>
+    <string name="copy_manspart_quest">The Lady\'s part is empty. Would you like to copy the Man\'s?</string>
+    <string name="copy_ladyspart_quest">The Man\'s part is empty. Would you like to copy the Lady\'s?</string>
+    <string name="thefigure_is_used">Unable to delete. The figure is used in your routines&#8230;</string>
+    <string name="figure_added">Figure added&#8230;</string>
+    <string name="enter_the_name">Enter the name, please&#8230;</string>
+    <string name="win_title_figures">Figures</string>
+    <string name="win_title_routines">Routines</string>
+    <string name="export">Export</string>
+    <string name="import_quest">Overwrite database from folder dancesport-routine-manager-share on SD-card?</string>
+    <string name="sd_card_missing">SD-card is missing</string>
+    <string name="import_done_succesfully">Import Done Succesfully</string>
+    <string name="export_done_succesfully">Database exported to folder dancesport-routine-manager-share on SD-card</string>
+    <string name="tytle">Title</string>
+    <string name="description">Description</string>
+    <string name="admob_id">a15113f84568842</string>
+    
+    <string-array name="sex_items_titles">
+        <item name="Man">Man</item>
+        <item name="Woman">Woman</item>
+    </string-array>
+    <string-array name="sex_items_values">
+        <item name="Man">1</item>
+        <item name="Woman">0</item>
+    </string-array>
+    <string-array name="figures_samba">
+        <item>Basic Movements Natural</item>
+        <item>Basic Movements Reverse</item>
+        <item>Basic Movements Side</item>
+        <item>Basic Movements Progressive</item>
+        <item>Basic Movements Outside</item>
+        <item>Whisks to Left</item>
+        <item>Whisks to Right</item>
+        <item>Whisks with Lady’s Underarm Turn (Volta Spot Turn for Lady) to Right</item>
+        <item>Whisks with Lady’s Underarm Turn (Volta Spot Turn for Lady) to Left</item>
+        <item>Samba Walks in PP (Promenade Samba Walks)</item>
+        <item>Side Samba Walk</item>
+        <item>Stationary Samba Walks</item>
+        <item>Travelling(Simple) Volta to Right in Closed Hold</item>
+        <item>Travelling(Simple) Volta to Left in Closed Hold</item>
+        <item>Travelling Bota Fogos Forward</item>
+        <item>Travelling Bota Fogos Back</item>
+        <item>Criss Cross Bota Fogos (Shadow Bota Fogos) </item>
+        <item>Bota Fogos to Promenade and Counter Promenade Position (Promenade Botafogo)</item>
+        <item>Criss Cross (Travelling Voltas to Right)</item>
+        <item>Criss Cross (Travelling Voltas to Left)</item>
+        <item>Solo Spot Volta</item>
+        <item>Reverse Turn</item>
+        <item>Plait</item>
+        <item>Rolling off the Arm</item>
+        <item>Dropped Volta</item>
+        <item>Corta Jaca</item>
+        <item>Closed Rocks</item>
+        <item>Open Rocks</item>
+        <item>Back Rocks (Backward Rocks)</item>
+        <item>Argentine Crosses</item>
+        <item>Maypole (Continuous Volta Turn to Right)</item>
+        <item>Maypole (Continuous Volta Turn to Left)</item>
+        <item>Three Step Turn</item>
+        <item>Samba Locks</item>
+        <item>Samba Side Chasses</item>
+        <item>Shadow Travelling Volta</item>
+        <item>Shadow Circular Volta</item>
+        <item>Contra Bota Fogos</item>
+        <item>Roundabout (Circular Voltas to Left)</item>
+        <item>Roundabout (Circular Voltas to Right)</item>
+        <item>Natural Roll</item>
+        <item>Promenade to Counter Promenade Runs</item>
+        <item>Cruzados Walks and Locks</item>
+        <item>Carioca Runs</item>
+    </string-array>
+    <string-array name="figures_chachacha">
+        <item>Chasse to side – to Right</item>
+        <item>Chasse to side – to Left</item>
+        <item>Compact Chasse</item>
+        <item>RF Forward Lock</item>
+        <item>LF Forward Lock</item>
+        <item>RF Backward Lock</item>
+        <item>LF Backward Lock</item>
+        <item>Ronde Chasse</item>
+        <item>Twist Chasse (Hip Twist Chasse)</item>
+        <item>Slip Chasse (Slip-Close Chasse)</item>
+        <item>Basic Movements Closed</item>
+        <item>Basic Movements Open</item>
+        <item>New York (Check from Open CPP)</item>
+        <item>New York (Check from Open PP)</item>
+        <item>Spot Turn to Left</item>
+        <item>Spot Turn to Right</item>
+        <item>Switch Turn to Left</item>
+        <item>Switch Turn to Right</item>
+        <item>Underarm Turn to Left</item>
+        <item>Underarm Turn to Right</item>
+        <item>Shoulder to Shoulder</item>
+        <item>Hand to Hand</item>
+        <item>Three Cha Cha Chas</item>
+        <item>Side Steps To Left</item>
+        <item>Side Steps To Right</item>
+        <item>There And Back</item>
+        <item>Time Steps as Side Basic</item>
+        <item>Time Steps with Cuban Cross (Latin Cross)</item>
+        <item>Fan</item>
+        <item>Alemana</item>
+        <item>Hockey Stick</item>
+        <item>Natural Opening Out Movement</item>
+        <item>Closed Hip Twist</item>
+        <item>Open Hip Twist</item>
+        <item>Cuban Break in Open Position</item>
+        <item>Cuban Break in Open CPP</item>
+        <item>Split Cuban Break in Open PP</item>
+        <item>Split Cuban Break in Open CPP</item>
+        <item>Turkish Towel</item>
+        <item>Split Cuban Break From Open CPP</item>
+        <item>Split Cuban Break From Open PP</item>
+        <item>Natural Top</item>
+        <item>Reverse Top</item>
+        <item>Opening Out From Reverse Top</item>
+        <item>Aida</item>
+        <item>Spiral</item>
+        <item>Curl</item>
+        <item>Rope Spinning</item>
+        <item>Cross Basic</item>
+        <item>Chase</item>
+        <item>Sweetheart</item>
+        <item>Runaway Chasse</item>
+        <item>Hip Twist Spiral (Close Hip TwistSpiral)</item>
+        <item>Development of Hip Twist Spiral (Open Hip Twist Spiral)</item>
+        <item>Follow My Leader</item>
+        <item>Syncopated Open Hip Twist </item>
+        <item>Continuous Circular Hip Twist</item>
+    </string-array>
+    <string-array name="figures_rumba">
+        <item>Basic Movement Closed</item>
+        <item>Basic Movement Open</item>
+        <item>Alternative Basic Movements</item>
+        <item>Cucarachas</item>
+        <item>New York (Check from Open CPP)</item>
+        <item>New York (Check from Open PP)</item>
+        <item>Sport Turn (Switch Turn) to Left</item>
+        <item>Sport Turn (Switch Turn) to Right</item>
+        <item>Underarm Turn to Left</item>
+        <item>Underarm Turn to Right</item>
+        <item>Shoulder to Shoulder</item>
+        <item>Hand to Hand</item>
+        <item>Advanced Opening Out Movement</item>
+        <item>Side Steps to Left</item>
+        <item>Side Steps to Right</item>
+        <item>Side Steps and Cucarachas</item>
+        <item>Cuban Rocks</item>
+        <item>Fan</item>
+        <item>Alemana</item>
+        <item>Hockey Stick</item>
+        <item>Natural Top</item>
+        <item>Opening Out to Left</item>
+        <item>Opening Out to Right</item>
+        <item>Natural Opening Out Movement(Natural Opening Out to Right)</item>
+        <item>Closed Hip Twist</item>
+        <item>Open Hip Twist</item>
+        <item>Reverse Top</item>
+        <item>Opening Out From Reverse Top</item>
+        <item>Aida (Fallaway)</item>
+        <item>Spiral</item>
+        <item>Curl</item>
+        <item>Rope Spinning</item>
+        <item>Fencing</item>
+        <item>Sliding Doors</item>
+        <item>Progressive Walks Forward</item>
+        <item>Progressive Walks Backward</item>
+        <item>Syncopated Cuban Rocks</item>
+        <item>Three Threes</item>
+        <item>Three Alemanas</item>
+        <item>Advanced Opening Out Movement</item>
+        <item>Continuous Hip Twist</item>
+        <item>Circular Hip Twist (Continuous Circular Hip Twist)</item>
+        <item>Runaway Alemana</item>
+        <item>Syncopated Open Hip Twist</item>
+    </string-array>
+    <string-array name="figures_pasodoble">
+        <item>Appel</item>
+        <item>Syncopated Appel</item>
+        <item>Sur Place</item>
+        <item>Basic Movement</item>
+        <item>Chasses to Left</item>
+        <item>Chasses to Right</item>
+        <item>Drag</item>
+        <item>Deplacement (also Attack)</item>
+        <item>Promenade Link</item>
+        <item>Promenade Close</item>
+        <item>Promenade</item>
+        <item>Ecart (Fallaway Whisk)</item>
+        <item>Separation</item>
+        <item>Separation with Lady’s Caping Walks</item>
+        <item>Separation with Lady’s Caping Walks to Fallaway Whisk</item>
+        <item>Separation with Fallaway Ending (Separation to Fallaway Whisk)</item>
+        <item>Fallaway Ending to Separation</item>
+        <item>Huit</item>
+        <item>Sixteen</item>
+        <item>Promenade to Counter Promenade</item>
+        <item>Grand Circle</item>
+        <item>Open Telemark</item>
+        <item>La Passe</item>
+        <item>Banderillas</item>
+        <item>Twist Turn</item>
+        <item>Fallaway Reverse Turn</item>
+        <item>Coup de Pique</item>
+        <item>Left Foot Variation</item>
+        <item>Spanish Lines</item>
+        <item>Flamenco Taps</item>
+        <item>Syncopated Separation</item>
+        <item>Travelling Spins from PP</item>
+        <item>Travelling Spins from CPP</item>
+        <item>Fregolina (also Farol)</item>
+        <item>Twists</item>
+        <item>Chasse Cape</item>
+        <item>Alternative Entries to PP</item>
+    </string-array>
+    <string-array name="figures_jive">
+        <item>Basic in Place</item>
+        <item>Fallaway Rock (Basic in Fallaway)</item>
+        <item>Fallaway Throwaway</item>
+        <item>Link</item>
+        <item>Double Link</item>
+        <item>Change of Places Right to Left</item>
+        <item>Change of Places Left to Right</item>
+        <item>Change of Hands Behind Back</item>
+        <item>Hip Bump (Left Shoulder Shove)</item>
+        <item>American Spin</item>
+        <item>Stop and Go</item>
+        <item>Whip</item>
+        <item>Double Whip (Double Cross Whip)</item>
+        <item>Whip Throwaway</item>
+        <item>Double Whip Throwaway</item>
+        <item>Toe Hill Swivels</item>
+        <item>Promenade Walks (Slow and Quick) Walks</item>
+        <item>Rolling off the Arm</item>
+        <item>Advanced Link (Break)</item>
+        <item>Overturned Fallaway Throwaway</item>
+        <item>Overturned Change of Places Left to Right</item>
+        <item>Mooch</item>
+        <item>Reverse Whip</item>
+        <item>Windmill</item>
+        <item>Spanish Arms</item>
+        <item>Simple Spin</item>
+        <item>Miami Special</item>
+        <item>Curly Whip</item>
+        <item>Chicken Walks</item>
+        <item>Stalking Walks, Flicks and Break(Flicks Into Break)</item>
+        <item>Change of Places Right to Left with Double Spin</item>
+        <item>Shoulder Spin</item>
+        <item>Chugging</item>
+        <item>Catapult</item>
+    </string-array>
+    <string-array name="figures_waltz">
+        <item>RF Closed Change(Natural to Reverse)</item>
+        <item>LF Closed Change (Reverse to Natural)</item>
+        <item>Natural Turn</item>
+        <item>Reverse Turn</item>
+        <item>Natural Spin Turn</item>
+        <item>Whisk</item>
+        <item>Chasse from PP</item>
+        <item>Hesitation Change</item>
+        <item>Outside Change</item>
+        <item>Reverse Corte</item>
+        <item>Back Whisk</item>
+        <item>Back Lock (Backward Lock Step)</item>
+        <item>Progressive Chasse to Righ</item>
+        <item>Progressive Chasse</item>
+        <item>Open Impetus (Open Impetus Turn)</item>
+        <item>Weave from PP</item>
+        <item>Drag Hesitation</item>
+        <item>Closed Impetus (Impetus Turn)</item>
+        <item>Basic Weave (Weave in Waltz Time)</item>
+        <item>Double Reverse Spin</item>
+        <item>Reverse Pivot</item>
+        <item>Closed Telemark (Telemark)</item>
+        <item>Open Telemark</item>
+        <item>Cross Hesitation</item>
+        <item>Wing</item>
+        <item>Outside Spin</item>
+        <item>Turning Lock (Turning Lock to Left)</item>
+        <item>Turning Lock to Right</item>
+        <item>Closed Wing</item>
+        <item>Curved Feather from PP</item>
+        <item>Fallaway Reverse and Slip Pivot</item>
+        <item>Hover Corte</item>
+        <item>Fallaway Whisk</item>
+        <item>Fallaway Natural Turn</item>
+        <item>Running Spin Turn</item>
+        <item>Passing Natural Turn</item>
+        <item>Quick Natural Weave from PP (Running Weave)</item>
+        <item>Running Finish</item>
+        <item>Open Running Finish</item>
+        <item>Running Cross Chasse</item>
+    </string-array>
+    <string-array name="figures_tango">
+        <item>Walk</item>
+        <item>Progressive Side Step</item>
+        <item>Progressive Link</item>
+        <item>Closed Promenade</item>
+        <item>Open Finish</item>
+        <item>Open Promenade</item>
+        <item>Rock Turn (Natural Rock Turn)</item>
+        <item>Open Reverse Turn, Lady in Line (Closed Finish)</item>
+        <item>Open Reverse Turn, Lady in Line (Open Finish)</item>
+        <item>Basic Reverse Turn</item>
+        <item>Back Corte</item>
+        <item>Progressive Side Step Reverse Turn</item>
+        <item>Rock Back on RF</item>
+        <item>Rock Back on LF</item>
+        <item>Natural Twist Turn</item>
+        <item>Natural Promenade Turn</item>
+        <item>Promenade Link</item>
+        <item>Four Step</item>
+        <item>Back Open Promenade</item>
+        <item>Outside Swivel</item>
+        <item>Fallaway Four Step</item>
+        <item>Four Step Change</item>
+        <item>Brush Тар</item>
+        <item>Five Step</item>
+        <item>Whisk</item>
+        <item>Back Whisk</item>
+        <item>Fallaway Promenade</item>
+        <item>Basic Reverse Turn</item>
+        <item>Chase</item>
+        <item>Fallaway Reverse and Slip Pivot</item>
+        <item>Open Natural Turn (Passing Natural Turn)</item>
+        <item>Open Telemark</item>
+        <item>Outside Spin</item>
+        <item>Reverse Pivot</item>
+    </string-array>
+    <string-array name="figures_viennese_waltz">
+        <item>Natural Turn</item>
+        <item>Reverse Turn</item>
+        <item>RF Forward Change Step</item>
+        <item>LF Forward Change Step</item>
+        <item>RF Backward Change Step</item>
+        <item>LF Backward Change Step</item>
+    </string-array>
+    <string-array name="figures_foxtrot">
+        <item>Feather (Feather Step)</item>
+        <item>Three Step</item>
+        <item>Natural Turn</item>
+        <item>Reverse Turn</item>
+        <item>Feather Finish</item>
+        <item>Closed Impetus (Impetus Turn)</item>
+        <item>Natural Weave</item>
+        <item>Change of Direction</item>
+        <item>Basic Weave (Weave)</item>
+        <item>Closed Telemark (Telemark)</item>
+        <item>Open Telemark</item>
+        <item>Feather Ending</item>
+        <item>Passing Natural Turn from PP</item>
+        <item>Outside Swivel</item>
+        <item>Top Spin</item>
+        <item>Hover Feather</item>
+        <item>Hover Telemark</item>
+        <item>Natural Telemark</item>
+        <item>Hover Cross</item>
+        <item>Open Impetus Turn</item>
+        <item>Weave from PP</item>
+        <item>Reverse Wave</item>
+        <item>Natural Twist Turn</item>
+        <item>Curved Feather</item>
+        <item>Back Feather</item>
+        <item>Natural Zig-Zag from PP</item>
+        <item>Fallaway Reverse and Slip Pivot</item>
+        <item>Natural Hover Telemark</item>
+        <item>Bounce Fallaway with Weave Ending</item>
+        <item>Quick Natural Weave from PP (Running Weave)</item>
+        <item>Quick Open Reverse</item>
+        <item>Reverse Pivot</item>
+        <item>Extended Reverse Wave</item>
+        <item>Curved Three Step</item>
+        <item>Curved Feather from PP</item>
+        <item>Whisk</item>
+        <item>Back Whisk</item>
+        <item>Double Reverse Spin</item>
+        <item>Outside Spin</item>
+        <item>Outside Change</item>
+        <item>Progressive Chasse to Right</item>
+        <item>Running Finish</item>
+        <item>Open Running Finish</item>
+        <item>Hover Corte</item>
+    </string-array>
+    <string-array name="figures_quickstep">
+        <item>Quarter Turn to Right</item>
+        <item>Quarter Turn to Left (Heel Pivot)</item>
+        <item>Natural Turn</item>
+        <item>Natural Turn with Hesitation</item>
+        <item>Natural Pivot Turn</item>
+        <item>Natural Spin Turn</item>
+        <item>Progressive Chasse</item>
+        <item>Chasse Reverse Turn</item>
+        <item>Forward Lock Step</item>
+        <item>Backward Lock Step</item>
+        <item>Progressive Chasse to Right</item>
+        <item>Tipple Chasse to Right</item>
+        <item>Running Finish</item>
+        <item>Outside Change</item>
+        <item>Cross Chasse</item>
+        <item>Tipple Chasse to Left</item>
+        <item>V6</item>
+        <item>Closed Impetus (Impetus Turn)</item>
+        <item>Reverse Pivot</item>
+        <item>Double Reverse Spin</item>
+        <item>Quick Open Reverse</item>
+        <item>Running Right Turn</item>
+        <item>Four Quick Run</item>
+        <item>Closed Telemark (Telemark)</item>
+        <item>Cross Swivel</item>
+        <item>Zig-Zag, Back Lock and Running Finish</item>
+        <item>Change of Direction</item>
+        <item>Whisk</item>
+        <item>Back Whisk</item>
+        <item>Fishtail</item>
+        <item>Six Quick Run</item>
+        <item>Rumba Cross</item>
+        <item>Tipsy to Right</item>
+        <item>Tipsy to Left</item>
+        <item>Hover Corte</item>
+        <item>Running Spin Turn</item>
+        <item>Open Running Finish</item>
+        <item>Open Impetus Turn</item>
+        <item>Open Telemark</item>
+        <item>Open Natural Turn (Passing Natural Turn)</item>
+        <item>Running Cross Chasse</item>
+        <item>Outside Spin</item>
+        <item>Fallaway Reverse and Slip Pivot</item>
+        <item>Curved Feather</item>
+        <item>Pivots to Right (Natural Pivots)</item>
+        <item>Turning Lock to Right</item>
+        <item>Curved Feather from PP</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,69 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@drawable/bg_debut_dark"   
+    	android:gravity="center"
+    	tools:context=".LatinMenuActivity">
+    
+
+    	<Button
+        	android:id="@+id/btMenuSamba"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:background="@drawable/custom_button_orange" 
+        	style="@style/ButtonText"
+        	android:text="@string/btMenuSamba"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuChaCha"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@+id/btMenuSamba"
+        	android:background="@drawable/custom_button_blue" 
+        	style="@style/ButtonText"
+        	android:text="@string/btMenuChaCha"
+        	android:textSize="27dp" />
+
+   		<Button
+        	android:id="@+id/btMenuRumba"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:background="@drawable/custom_button_purple" 
+        	style="@style/ButtonText"
+        	android:layout_below="@+id/btMenuChaCha"
+        	android:text="@string/btMenuRumba"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuPasoDoble"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:background="@drawable/custom_button_red" 
+        	style="@style/ButtonText"
+        	android:layout_below="@+id/btMenuRumba"
+        	android:text="@string/btMenuPasoDoble"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuJive"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_below="@+id/btMenuPasoDoble"
+        	android:background="@drawable/custom_button_yellow" 
+        	style="@style/ButtonText"
+        	android:text="@string/btMenuJive"
+        	android:textSize="27dp" />
+    
+	</RelativeLayout>
+	
+</ScrollView>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+ android:id="@+id/llSelectFiguresClickable"
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ android:layout_width="fill_parent"
+ android:layout_height="wrap_content"
+ android:orientation="horizontal"
+ android:background="@drawable/listrow_bg_gray">
+
+<TextView
+    android:id="@+id/tvFigureName"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right|center_vertical"
+    android:layout_marginRight="10dp"
+    android:layout_weight="1"
+    android:text="Ботафога"
+    android:textColor="@android:color/black"
+    android:textSize="28dp" >
+
+</TextView>
+
+<ImageButton
+    android:id="@+id/btDeleteRoutine"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_weight="0"
+    android:background="@android:color/transparent"
+    android:src="@drawable/delete_icon" />
+
+<Button
+    android:id="@+id/btEditRoutine"
+    style="@style/OrangeSmallStyle"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_margin="4dp"
+    android:layout_weight="0"
+    android:background="@drawable/edit_button2l" />
+
+</LinearLayout>

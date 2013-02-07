@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drag_handle"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical"
+    android:background="@drawable/bg_debut_dark">
+
+    <Button
+        android:id="@+id/btMenuLatin"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_button_red" 
+        style="@style/ButtonText"
+        android:text="@string/btMenuLatin"
+        android:textSize="27dp" />
+
+    <Button
+        android:id="@+id/btMenuStandard"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btMenuLatin"
+        android:layout_centerVertical="true"
+        android:text="@string/btMenuStandard"
+        android:background="@drawable/custom_button_blue" 
+        style="@style/ButtonText"
+        android:textSize="27dp" />
+
+</RelativeLayout>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_debut_dark"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/llRoutinesListActionPanel"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/action_panel_bg" >
+
+        <Button
+            android:id="@+id/btRLback"
+            style="@style/ButtonTextActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+            android:background="@drawable/custom_button_blue"
+            android:text="&lt;"
+            android:textSize="16dp"
+            android:typeface="normal" />
+
+        <Button
+            android:id="@+id/btAddNewFigure"
+            style="@style/ButtonTextActionBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="0"
+            android:background="@drawable/custom_button_blue"
+            android:text="@string/btNewFigure" />
+
+        <TextView
+            android:id="@+id/tvCurDanceRL"
+            android:layout_width="74dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|fill_horizontal|center"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/tvCurDanceChar"
+            style="@style/CurDanceCharStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:text="J" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0" >
+
+        <EditText
+            android:id="@+id/etInputSearchFigure"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:hint="@string/Search" />
+
+        <Button
+            android:id="@+id/btButton_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_weight="0"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:text=" x " />
+    </LinearLayout>
+
+    <RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+         android:layout_weight="1" >
+
+        <ListView
+            android:id="@+id/lvSelectFigures"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+        </ListView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_transp_title" >
+
+            <TextView
+                android:id="@+id/tvWindowTitle"
+                style="@style/TextRoutinesTRanspTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:text="Window Title" />
+        </LinearLayout>
+    </RelativeLayout>
+    <com.google.ads.AdView
+                xmlns:googleads="http://schemas.android.com/apk/lib/com.google.ads"
+                android:id="@id/ad"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                googleads:adSize="BANNER"
+                googleads:adUnitId="@string/admob_id"
+                android:layout_weight="0" />
+</LinearLayout>

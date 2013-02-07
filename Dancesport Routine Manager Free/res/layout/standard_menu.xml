@@ -1,0 +1,68 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:fillViewport="true"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:background="@drawable/bg_debut_dark"
+    	android:gravity="center"
+    	tools:context=".LatinMenuActivity" >
+
+    	<Button
+        	android:id="@+id/btMenuWaltz"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_centerHorizontal="true"
+        	android:text="@string/btMenuWaltz"
+        	android:background="@drawable/custom_button_orange" 
+        	style="@style/ButtonText"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuTango"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_below="@+id/btMenuWaltz"
+        	android:text="@string/btMenuTango"
+        	android:background="@drawable/custom_button_red" 
+        	style="@style/ButtonText"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuVienneseWaltz"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_below="@+id/btMenuTango"
+        	android:text="@string/btMenuVienneseWaltz"
+        	android:background="@drawable/custom_button_purple" 
+        	style="@style/ButtonText"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuFoxtrot"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_below="@+id/btMenuVienneseWaltz"
+        	android:text="@string/btMenuFoxtrot"
+        	android:background="@drawable/custom_button_blue" 
+        	style="@style/ButtonText"
+        	android:textSize="27dp" />
+
+    	<Button
+        	android:id="@+id/btMenuQuickstep"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_alignParentLeft="true"
+        	android:layout_below="@+id/btMenuFoxtrot"
+        	android:text="@string/btMenuQuickstep"
+        	android:background="@drawable/custom_button_yellow" 
+        	style="@style/ButtonText"
+        	android:textSize="27dp" />
+   
+    	
+	</RelativeLayout>
+</ScrollView>

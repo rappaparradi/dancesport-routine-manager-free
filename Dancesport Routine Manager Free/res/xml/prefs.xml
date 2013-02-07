@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/bg_debut_dark"
+    android:windowBackground="@drawable/bg_debut_dark">
+    <PreferenceCategory
+        android:title="@string/settings">
+         <ListPreference
+            android:key="@string/pref_key_flag_sex"
+            android:title="@string/pref_title_sex_flag"
+            android:defaultValue="1000"
+            android:entries="@array/sex_items_titles"
+            android:entryValues="@array/sex_items_values"
+        />   
+
+    </PreferenceCategory>
+</PreferenceScreen>

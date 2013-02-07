@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@drawable/bg_debut_dark">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <EditText
+            android:id="@+id/etRoutinesName"
+            android:hint="@string/tytle"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <requestFocus />
+        </EditText>
+
+    </LinearLayout>
+
+
+   <Button
+       android:id="@+id/btAddnewRoutine"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/save" />
+
+</LinearLayout>

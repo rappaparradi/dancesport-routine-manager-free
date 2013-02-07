@@ -1,0 +1,35 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <group android:id="@+id/group2" >
+        <item
+            android:id="@+id/btAddRoutine"
+            android:icon="@drawable/ic_menu_add"
+            android:title="New Routine"
+            android:visible="false">
+        </item>
+        <item
+            android:id="@+id/btFigures"
+            android:icon="@drawable/ic_menu_agenda"
+            android:title="Figures"
+            android:visible="false">
+        </item>
+        <item
+            android:id="@+id/settings_option_item"
+            android:icon="@drawable/ic_menu_preferences"
+            android:title="@string/settings">
+        </item>
+    </group>
+    <group android:id="@+id/group1" >
+        <item
+            android:id="@+id/btExport"
+            android:icon="@drawable/export_icon"
+            android:title="@string/export">
+        </item>
+        <item
+            android:id="@+id/btImport"
+            android:icon="@drawable/import_icon"
+            android:title="@string/importstr">
+        </item>
+    </group>
+
+</menu>
