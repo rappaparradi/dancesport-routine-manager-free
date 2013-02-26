@@ -1,9 +1,5 @@
 package com.rappasocial.routinemanager.free;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,20 +8,15 @@ import com.google.ads.AdView;
 import com.mobeta.android.dslv.DragSortListView;
 import com.rappasocial.routinemanager.free.R;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.provider.Settings.Secure;
-import android.text.format.DateFormat;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -37,11 +28,9 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -131,7 +120,7 @@ public class RoutinesListActivity extends ListActivity implements
 
 		TextView tvCurDanceChar = (TextView) findViewById(R.id.tvCurDanceChar);
 
-		if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Samba) == 0) {
+		if ((curDance.name).compareToIgnoreCase(DBHelper.Samba) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_orange));
@@ -141,7 +130,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_orange));
 			tvCurDanceChar.setText("S");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.ChaCha) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.ChaCha) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_blue));
@@ -151,7 +140,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_blue));
 			tvCurDanceChar.setText("Ch");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Rumba) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Rumba) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_purple));
@@ -162,7 +151,7 @@ public class RoutinesListActivity extends ListActivity implements
 			tvCurDanceChar.setText("R");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.PasoDoble) == 0) {
+				.compareToIgnoreCase(DBHelper.PasoDoble) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_red));
@@ -172,7 +161,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_red));
 			tvCurDanceChar.setText("P");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Jive) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Jive) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_yellow));
@@ -182,7 +171,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_yellow));
 			tvCurDanceChar.setText("J");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Waltz) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Waltz) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_orange));
@@ -192,7 +181,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_orange));
 			tvCurDanceChar.setText("W");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Tango) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Tango) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_red));
@@ -203,7 +192,7 @@ public class RoutinesListActivity extends ListActivity implements
 			tvCurDanceChar.setText("T");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.VienneseWaltz) == 0) {
+				.compareToIgnoreCase(DBHelper.VienneseWaltz) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_purple));
@@ -213,7 +202,7 @@ public class RoutinesListActivity extends ListActivity implements
 					.getDrawable(R.drawable.custom_button_purple));
 			tvCurDanceChar.setText("V");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Foxtrot) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Foxtrot) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_blue));
@@ -224,7 +213,7 @@ public class RoutinesListActivity extends ListActivity implements
 			tvCurDanceChar.setText("F");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.Quickstep) == 0) {
+				.compareToIgnoreCase(DBHelper.Quickstep) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_yellow));
@@ -293,14 +282,14 @@ public class RoutinesListActivity extends ListActivity implements
 		// String[] selectionArgs = null;
 		// String groupBy = null;
 		// String having = null;
-		String orderBy = extApp.dbHelper.COLUMN_ROUTINES_NAME;
+		String orderBy = DBHelper.COLUMN_ROUTINES_NAME;
 
 		// РєСѓСЂСЃРѕСЂ
 		Cursor c = null;
 		Dance curDance = extApp.getcurrentDance();
 		if (curDance != null) {
 
-			selection = extApp.dbHelper.COLUMN_ROUTINES_DANCE_ID + " = "
+			selection = DBHelper.COLUMN_ROUTINES_DANCE_ID + " = "
 					+ curDance.id;
 
 		} else {
@@ -308,7 +297,7 @@ public class RoutinesListActivity extends ListActivity implements
 			selection = null;
 		}
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_ROUTINES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_ROUTINES, null, selection,
 				null, null, null, orderBy);
 
 		if (c != null) {
@@ -318,15 +307,15 @@ public class RoutinesListActivity extends ListActivity implements
 
 					routines.add(new Routine(
 							c.getInt(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_ROUTINES_ID)),
+									.getColumnIndex(DBHelper.COLUMN_ROUTINES_ID)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_ROUTINES_NAME)),
+									.getColumnIndex(DBHelper.COLUMN_ROUTINES_NAME)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_ROUTINES_YT_ID)),
+									.getColumnIndex(DBHelper.COLUMN_ROUTINES_YT_ID)),
 							c.getLong(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_ROUTINES_CREATED_ON)),
+									.getColumnIndex(DBHelper.COLUMN_ROUTINES_CREATED_ON)),
 							c.getLong(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_ROUTINES_MODIFIED_ON))));
+									.getColumnIndex(DBHelper.COLUMN_ROUTINES_MODIFIED_ON))));
 
 				} while (c.moveToNext());
 			}
@@ -405,6 +394,7 @@ public class RoutinesListActivity extends ListActivity implements
 		// return position;
 		// }
 
+		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 
 			// View view = convertView;
@@ -615,60 +605,60 @@ extApp.editTimingBuffer = source.editTimingBuffer;
 		      Dance curDance = extApp.getcurrentDance();
 		        
 		  
-				if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Samba) == 0) {
+				if ((curDance.name).compareToIgnoreCase(DBHelper.Samba) == 0) {
 
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_orange));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_orange));
 
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.ChaCha) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.ChaCha) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_blue));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_blue));
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Rumba) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Rumba) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_purple));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_purple));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.PasoDoble) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.PasoDoble) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_red));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_red));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Jive) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Jive) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_yellow));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_yellow));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Waltz) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Waltz) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_orange));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_orange));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Tango) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Tango) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_red));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_red));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.VienneseWaltz) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.VienneseWaltz) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_purple));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_purple));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Foxtrot) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Foxtrot) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_blue));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_blue));
 					
 					
-				}else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Quickstep) == 0) {
+				}else if ((curDance.name).compareToIgnoreCase(DBHelper.Quickstep) == 0) {
 					
 					llRoutineEditBG.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_yellow));
 					llRoutineEditClickAble.setBackgroundDrawable(getResources().getDrawable(R.drawable.listrow_bg_clickable_yellow));
@@ -683,7 +673,7 @@ extApp.editTimingBuffer = source.editTimingBuffer;
 		}
 
 		Routine getRoutine(int position) {
-			return ((Routine) getItem(position));
+			return (getItem(position));
 		}
 
 		public void onClick(View v) {
@@ -868,11 +858,11 @@ extApp.editTimingBuffer = source.editTimingBuffer;
 
 	void DeleteCurrentRoutine() {
 
-		extApp.db.delete(extApp.dbHelper.DB_TABLE_ROUTINE_RAWS,
-				extApp.dbHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID + "="
+		extApp.db.delete(DBHelper.DB_TABLE_ROUTINE_RAWS,
+				DBHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID + "="
 						+ extApp.currentRoutineid, null);
-		extApp.db.delete(extApp.dbHelper.DB_TABLE_ROUTINES,
-				extApp.dbHelper.COLUMN_ROUTINES_ID + "="
+		extApp.db.delete(DBHelper.DB_TABLE_ROUTINES,
+				DBHelper.COLUMN_ROUTINES_ID + "="
 						+ extApp.currentRoutineid, null);
 		routines.remove(extApp.currentRoutineRawId);
 		boxAdapter.notifyDataSetChanged();

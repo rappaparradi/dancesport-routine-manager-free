@@ -9,7 +9,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
-import android.widget.EditText;
 
 public class LatinMenuActivity extends Activity implements OnClickListener {
 
@@ -63,10 +62,10 @@ public class LatinMenuActivity extends Activity implements OnClickListener {
 
 		//
 
-		selection = extApp.dbHelper.DB_TABLE_DANCES + "."
-				+ extApp.dbHelper.COLUMN_DANCES_NAME + " = ?";
+		selection = DBHelper.DB_TABLE_DANCES + "."
+				+ DBHelper.COLUMN_DANCES_NAME + " = ?";
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_DANCES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_DANCES, null, selection,
 				selectionArgs, null, null, null);
 
 		if (c != null) {
@@ -75,9 +74,9 @@ public class LatinMenuActivity extends Activity implements OnClickListener {
 				do {
 					Dance locCurDance = new Dance(
 							c.getInt(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_DANCES_ID)),
+									.getColumnIndex(DBHelper.COLUMN_DANCES_ID)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_DANCES_NAME)));
+									.getColumnIndex(DBHelper.COLUMN_DANCES_NAME)));
 					extApp.setcurrentDance(locCurDance);
 
 				} while (c.moveToNext());
@@ -139,11 +138,11 @@ public class LatinMenuActivity extends Activity implements OnClickListener {
 		Cursor c = null;
 
 		final String SQL_STATEMENT = "SELECT COUNT(*) FROM "
-				+ extApp.dbHelper.DB_TABLE_ROUTINES + " as r LEFT JOIN "
-				+ extApp.dbHelper.DB_TABLE_DANCES + " as d " + " ON r."
-				+ extApp.dbHelper.COLUMN_ROUTINES_DANCE_ID + " = d."
-				+ extApp.dbHelper.COLUMN_DANCES_ID + "  WHERE d."
-				+ extApp.dbHelper.COLUMN_DANCES_NAME + "=?";
+				+ DBHelper.DB_TABLE_ROUTINES + " as r LEFT JOIN "
+				+ DBHelper.DB_TABLE_DANCES + " as d " + " ON r."
+				+ DBHelper.COLUMN_ROUTINES_DANCE_ID + " = d."
+				+ DBHelper.COLUMN_DANCES_ID + "  WHERE d."
+				+ DBHelper.COLUMN_DANCES_NAME + "=?";
 		c = extApp.db.rawQuery(SQL_STATEMENT, new String[] { DanceName });
 
 		if (c != null) {
@@ -165,20 +164,20 @@ public class LatinMenuActivity extends Activity implements OnClickListener {
 	public void RefrashCountRoutines() {
 		
 		btMenuSamba.setText(getResources().getString(R.string.btMenuSamba)
-				+ " (" + GetCountRoutines(extApp.dbHelper.Samba) + ")");
+				+ " (" + GetCountRoutines(DBHelper.Samba) + ")");
 
 		btMenuChaCha.setText(getResources().getString(R.string.btMenuChaCha)
-				+ " (" + GetCountRoutines(extApp.dbHelper.ChaCha) + ")");
+				+ " (" + GetCountRoutines(DBHelper.ChaCha) + ")");
 
 		btMenuRumba.setText(getResources().getString(R.string.btMenuRumba)
-				+ " (" + GetCountRoutines(extApp.dbHelper.Rumba) + ")");
+				+ " (" + GetCountRoutines(DBHelper.Rumba) + ")");
 
 		btMenuPasoDoble.setText(getResources().getString(
 				R.string.btMenuPasoDoble)
-				+ " (" + GetCountRoutines(extApp.dbHelper.PasoDoble) + ")");
+				+ " (" + GetCountRoutines(DBHelper.PasoDoble) + ")");
 
 		btMenuJive.setText(getResources().getString(R.string.btMenuJive) + " ("
-				+ GetCountRoutines(extApp.dbHelper.Jive) + ")");
+				+ GetCountRoutines(DBHelper.Jive) + ")");
 
 	}
 

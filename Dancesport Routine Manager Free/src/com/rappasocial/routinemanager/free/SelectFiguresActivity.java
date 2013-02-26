@@ -6,9 +6,7 @@ import com.rappasocial.routinemanager.free.R;
 
 import android.app.Activity;
 import android.content.Context;
-import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -18,10 +16,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
+import android.widget.AbsListView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -44,13 +40,14 @@ public class SelectFiguresActivity extends Activity implements OnClickListener,O
 	TextView tvCurDance;
 	EditText etInputSearchFigure;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.select_figures_list);
 
 		lvMain = (ListView) findViewById(R.id.lvSelectFigures);
 
-		lvMain.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+		lvMain.setChoiceMode(AbsListView.CHOICE_MODE_MULTIPLE);
 
 		figures = new ArrayList<Figure>();
 		sbArray = new SparseBooleanArray();
@@ -98,14 +95,14 @@ public class SelectFiguresActivity extends Activity implements OnClickListener,O
 		// String[] selectionArgs = null;
 		// String groupBy = null;
 		// String having = null;
-		String orderBy = extApp.dbHelper.COLUMN_FIGURES_NAME;
+		String orderBy = DBHelper.COLUMN_FIGURES_NAME;
 
 		// курсор
 		Cursor c = null;
 		Dance curDance = extApp.getcurrentDance();
 		if (curDance != null) {
 
-			selection = extApp.dbHelper.COLUMN_FIGURES_DANCE_ID + " = "
+			selection = DBHelper.COLUMN_FIGURES_DANCE_ID + " = "
 					+ curDance.id;
 
 		} else {
@@ -113,7 +110,7 @@ public class SelectFiguresActivity extends Activity implements OnClickListener,O
 			selection = null;
 		}
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_FIGURES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_FIGURES, null, selection,
 				null, null, null, orderBy);
 
 		if (c != null) {
@@ -123,9 +120,9 @@ public class SelectFiguresActivity extends Activity implements OnClickListener,O
 
 					figures.add(new Figure(
 							c.getInt(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_ID)),
+									.getColumnIndex(DBHelper.COLUMN_FIGURES_ID)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_NAME)),
+									.getColumnIndex(DBHelper.COLUMN_FIGURES_NAME)),
 							curDance.id));
 
 				} while (c.moveToNext());

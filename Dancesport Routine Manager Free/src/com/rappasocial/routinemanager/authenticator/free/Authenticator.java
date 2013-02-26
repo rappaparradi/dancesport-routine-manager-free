@@ -27,6 +27,7 @@ import android.os.Bundle;
 import com.rappasocial.routinemanager.free.R;
 import com.rappasocial.routinemanager.free.Constants;
 import com.rappasocial.routinemanager.free.client.NetworkUtilities;
+import com.rappasocial.webservices.DrupalJSONServerNetworkUtilityBase;
 
 /**
  * This class is an implementation of AbstractAccountAuthenticator for
@@ -116,7 +117,7 @@ class Authenticator extends AbstractAccountAuthenticator {
                 result.putString(AccountManager.KEY_ACCOUNT_NAME, account.name);
                 result.putString(AccountManager.KEY_ACCOUNT_TYPE,
                     Constants.ACCOUNT_TYPE);
-                result.putString(AccountManager.KEY_AUTHTOKEN, NetworkUtilities.getSessionCookie());
+                result.putString(AccountManager.KEY_AUTHTOKEN, DrupalJSONServerNetworkUtilityBase.getSessionCookie());
                 result.putString(AccountManager.KEY_PASSWORD, password);
                 return result;
             }
@@ -161,7 +162,7 @@ class Authenticator extends AbstractAccountAuthenticator {
      * Validates user's password on the server
      */
     private boolean onlineConfirmPassword(String username, String password) {
-        return NetworkUtilities.authenticate(username, password,
+        return DrupalJSONServerNetworkUtilityBase.authenticate(username, password,
             null/* Handler */, null/* Context */);
     }
 

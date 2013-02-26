@@ -15,8 +15,6 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.app.Activity;
 import android.app.AlertDialog;
-import android.content.ContentValues;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
@@ -168,7 +166,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
 				OutputStream myOutput = new FileOutputStream(
 						directory.getPath() + "/routineManagerDB_v"
-								+ String.valueOf(extApp.dbHelper.DB_VERSION)
+								+ String.valueOf(DBHelper.DB_VERSION)
 								+ ".backup");
 
 				// Transfer bytes from the input file to the output file
@@ -238,7 +236,7 @@ public class MainActivity extends Activity implements OnClickListener {
 													String name) {
 
 												if (name.startsWith("routineManagerDB_v"
-														+ String.valueOf(extApp.dbHelper.DB_VERSION))) {
+														+ String.valueOf(DBHelper.DB_VERSION))) {
 													return true;
 												} else {
 													return false;
@@ -337,7 +335,7 @@ public class MainActivity extends Activity implements OnClickListener {
 										InputStream myInputs = new FileInputStream(
 												directory.getPath()
 														+ "/routineManagerDB_v"
-														+ String.valueOf(extApp.dbHelper.DB_VERSION)
+														+ String.valueOf(DBHelper.DB_VERSION)
 														+ ".backup");
 
 										// Transfer bytes from the input file to

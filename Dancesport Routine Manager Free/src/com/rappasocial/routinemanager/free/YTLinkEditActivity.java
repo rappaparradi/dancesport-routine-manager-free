@@ -1,28 +1,17 @@
 package com.rappasocial.routinemanager.free;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
-import java.util.ArrayList;
-
 import com.rappasocial.routinemanager.free.R;
 
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.WindowManager;
 import android.view.View.OnClickListener;
-import android.view.View.OnFocusChangeListener;
-import android.view.View.OnTouchListener;
-import android.view.animation.Animation;
-import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -57,14 +46,14 @@ public class YTLinkEditActivity extends Activity implements  OnClickListener {
 		     
 			ContentValues cv = new ContentValues();
 
-			cv.put(extApp.dbHelper.COLUMN_ROUTINES_YT_ID, etYTlink
+			cv.put(DBHelper.COLUMN_ROUTINES_YT_ID, etYTlink
 					.getText().toString());
 
 
-			cv.put(extApp.dbHelper.COLUMN_ROUTINES_MODIFIED_ON,
+			cv.put(DBHelper.COLUMN_ROUTINES_MODIFIED_ON,
 					System.currentTimeMillis());
 
-			extApp.db.update(extApp.dbHelper.DB_TABLE_ROUTINES, cv, extApp.dbHelper.COLUMN_ROUTINES_ID + "=" + this.cur_routine_id, null);
+			extApp.db.update(DBHelper.DB_TABLE_ROUTINES, cv, DBHelper.COLUMN_ROUTINES_ID + "=" + this.cur_routine_id, null);
 //			Context context = getApplicationContext();
 //			CharSequence text = getString(R.string.Routine) + " '"
 //					+ etRoutinesName.getText().toString() + "' "

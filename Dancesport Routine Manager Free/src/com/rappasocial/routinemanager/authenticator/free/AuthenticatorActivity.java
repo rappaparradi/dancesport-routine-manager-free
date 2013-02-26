@@ -26,7 +26,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.provider.ContactsContract;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -37,6 +36,7 @@ import android.widget.TextView;
 import com.rappasocial.routinemanager.free.R;
 import com.rappasocial.routinemanager.free.Constants;
 import com.rappasocial.routinemanager.free.client.NetworkUtilities;
+import com.rappasocial.webservices.DrupalJSONServerNetworkUtilityBase;
 
 /**
  * Activity which displays login screen to the user.
@@ -190,7 +190,7 @@ public class AuthenticatorActivity extends AccountAuthenticatorActivity {
         }
         final Intent intent = new Intent();
         //mAuthtoken = mPassword;
-        mAuthtoken = NetworkUtilities.getSessionCookie();
+        mAuthtoken = DrupalJSONServerNetworkUtilityBase.getSessionCookie();
         intent.putExtra(AccountManager.KEY_ACCOUNT_NAME, mUsername);
         intent
             .putExtra(AccountManager.KEY_ACCOUNT_TYPE, Constants.ACCOUNT_TYPE);

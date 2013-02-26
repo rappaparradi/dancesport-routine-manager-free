@@ -52,12 +52,12 @@ public class ExtendedApplication extends Application {
     		String selection = null;
 	        Cursor c = null;
 		    
-	        selection = dbHelper.COLUMN_FIGURES_DANCE_ID + " = " + d_id;
-	        selection = selection + " AND " + dbHelper.COLUMN_FIGURES_ID + " = " + f_id;
+	        selection = DBHelper.COLUMN_FIGURES_DANCE_ID + " = " + d_id;
+	        selection = selection + " AND " + DBHelper.COLUMN_FIGURES_ID + " = " + f_id;
 		    	
 		
 		      
-		      c = db.query(dbHelper.DB_TABLE_FIGURES, null, selection, null, null, null,
+		      c = db.query(DBHelper.DB_TABLE_FIGURES, null, selection, null, null, null,
 		          null);
 		      
 		      if (c != null) {
@@ -65,7 +65,7 @@ public class ExtendedApplication extends Application {
 		            
 		            do {
 		              
-		            	return c.getString(c.getColumnIndex(dbHelper.COLUMN_FIGURES_NAME));
+		            	return c.getString(c.getColumnIndex(DBHelper.COLUMN_FIGURES_NAME));
 		              
 		              
 
@@ -83,12 +83,12 @@ public class ExtendedApplication extends Application {
 		String selection = null;
         Cursor c = null;
 	    
-        selection = dbHelper.COLUMN_ROUTINES_ID + " = " + r_id;
+        selection = DBHelper.COLUMN_ROUTINES_ID + " = " + r_id;
         
 	    	
 	
 	      
-	      c = db.query(dbHelper.DB_TABLE_ROUTINES, null, selection, null, null, null,
+	      c = db.query(DBHelper.DB_TABLE_ROUTINES, null, selection, null, null, null,
 	          null);
 	      
 	      if (c != null) {
@@ -96,7 +96,7 @@ public class ExtendedApplication extends Application {
 	            
 	            do {
 	              
-	            	return c.getString(c.getColumnIndex(dbHelper.COLUMN_ROUTINES_NAME));
+	            	return c.getString(c.getColumnIndex(DBHelper.COLUMN_ROUTINES_NAME));
 	              
 	              
 

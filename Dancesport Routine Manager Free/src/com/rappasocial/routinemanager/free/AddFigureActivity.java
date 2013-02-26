@@ -7,18 +7,12 @@ import com.rappasocial.routinemanager.free.R;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
-import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
 import android.provider.Settings.Secure;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.View.OnTouchListener;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ScrollView;
 import android.widget.Toast;
 
 public class AddFigureActivity extends Activity implements OnClickListener {
@@ -50,12 +44,12 @@ public class AddFigureActivity extends Activity implements OnClickListener {
 			if (!editmode) {
 				ContentValues cv = new ContentValues();
 
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_NAME, locFiguresName);
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_DESCRIPTION,
+				cv.put(DBHelper.COLUMN_FIGURES_NAME, locFiguresName);
+				cv.put(DBHelper.COLUMN_FIGURES_DESCRIPTION,
 						etFifuresDescription.getText().toString());
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_DANCE_ID,
+				cv.put(DBHelper.COLUMN_FIGURES_DANCE_ID,
 						extApp.getcurrentDance().id);
-				extApp.db.insert(extApp.dbHelper.DB_TABLE_FIGURES, null, cv);
+				extApp.db.insert(DBHelper.DB_TABLE_FIGURES, null, cv);
 				Context context = getApplicationContext();
 				CharSequence text = getString(R.string.figure_added);
 				int duration = Toast.LENGTH_SHORT;
@@ -66,13 +60,13 @@ public class AddFigureActivity extends Activity implements OnClickListener {
 
 				ContentValues cv = new ContentValues();
 
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_NAME, locFiguresName);
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_DESCRIPTION,
+				cv.put(DBHelper.COLUMN_FIGURES_NAME, locFiguresName);
+				cv.put(DBHelper.COLUMN_FIGURES_DESCRIPTION,
 						etFifuresDescription.getText().toString());
-				cv.put(extApp.dbHelper.COLUMN_FIGURES_DANCE_ID,
+				cv.put(DBHelper.COLUMN_FIGURES_DANCE_ID,
 						extApp.getcurrentDance().id);
-				extApp.db.update(extApp.dbHelper.DB_TABLE_FIGURES, cv,
-						extApp.dbHelper.COLUMN_FIGURES_ID + "="
+				extApp.db.update(DBHelper.DB_TABLE_FIGURES, cv,
+						DBHelper.COLUMN_FIGURES_ID + "="
 								+ this.cur_figure_id, null);
 				Context context = getApplicationContext();
 				CharSequence text = getString(R.string.Saved);

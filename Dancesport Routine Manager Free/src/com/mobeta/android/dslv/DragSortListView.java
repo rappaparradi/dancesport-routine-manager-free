@@ -24,10 +24,6 @@ package com.mobeta.android.dslv;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.database.DataSetObserver;
-import android.graphics.Bitmap;
-import android.graphics.PixelFormat;
-import android.graphics.Rect;
-import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
 import android.graphics.Canvas;
 import android.graphics.Point;
@@ -36,15 +32,11 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.*;
-import android.view.GestureDetector.SimpleOnGestureListener;
 import android.widget.*;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-
 import com.rappasocial.routinemanager.free.R;
 
 
@@ -976,7 +968,7 @@ public class DragSortListView extends ListView {
             //Log.d("mobeta", "edgeTop="+edgeTop+" edgeBot="+edgeBottom);
 
             int slideRgnHeight = (int) (0.5f * mSlideRegionFrac * edgeToEdge);
-            float slideRgnHeightF = (float) slideRgnHeight;
+            float slideRgnHeightF = slideRgnHeight;
             int slideEdgeTop = edgeTop + slideRgnHeight;
             int slideEdgeBottom = edgeBottom - slideRgnHeight;
 
@@ -984,7 +976,7 @@ public class DragSortListView extends ListView {
             if (mFloatViewMid < slideEdgeTop) {
                 mFirstExpPos = itemPos - 1;
                 mSecondExpPos = itemPos;
-                mSlideFrac = 0.5f * ((float) (slideEdgeTop - mFloatViewMid)) / slideRgnHeightF;
+                mSlideFrac = 0.5f * (slideEdgeTop - mFloatViewMid) / slideRgnHeightF;
                 //Log.d("mobeta", "firstExp="+mFirstExpPos+" secExp="+mSecondExpPos+" slideFrac="+mSlideFrac);
             } else if (mFloatViewMid < slideEdgeBottom) {
                 mFirstExpPos = itemPos;
@@ -992,7 +984,7 @@ public class DragSortListView extends ListView {
             } else {
                 mFirstExpPos = itemPos;
                 mSecondExpPos = itemPos + 1;
-                mSlideFrac = 0.5f * (1.0f + ((float) (edgeBottom - mFloatViewMid)) / slideRgnHeightF);
+                mSlideFrac = 0.5f * (1.0f + (edgeBottom - mFloatViewMid) / slideRgnHeightF);
                 //Log.d("mobeta", "firstExp="+mFirstExpPos+" secExp="+mSecondExpPos+" slideFrac="+mSlideFrac);
             }
 
@@ -1269,7 +1261,7 @@ public class DragSortListView extends ListView {
     private void updateScrollStarts() {
         final int padTop = getPaddingTop();
         final int listHeight = getHeight() - padTop - getPaddingBottom();
-        float heightF = (float) listHeight;
+        float heightF = listHeight;
         
         mUpScrollStartYF = padTop + mDragUpScrollStartFrac * heightF;
         mDownScrollStartYF = padTop + (1.0f - mDragDownScrollStartFrac) * heightF;
@@ -2074,7 +2066,7 @@ public class DragSortListView extends ListView {
             // dy is change in View position of a list item; i.e. positive dy
             // means user is scrolling up (list item moves down the screen, remember
             // y=0 is at top of View).
-            dy = (int) Math.round(mScrollSpeed * dt);
+            dy = Math.round(mScrollSpeed * dt);
             mScrollY += dy;
 
             requestLayout();

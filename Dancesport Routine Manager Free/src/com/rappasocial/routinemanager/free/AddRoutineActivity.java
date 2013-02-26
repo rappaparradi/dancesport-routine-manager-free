@@ -44,18 +44,18 @@ public class AddRoutineActivity extends Activity implements OnClickListener,
 			if (!editmode) {
 				ContentValues cv = new ContentValues();
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_NAME, locRoutineName);
+				cv.put(DBHelper.COLUMN_ROUTINES_NAME, locRoutineName);
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_DANCE_ID,
+				cv.put(DBHelper.COLUMN_ROUTINES_DANCE_ID,
 						extApp.getcurrentDance().id);
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_CREATED_ON,
+				cv.put(DBHelper.COLUMN_ROUTINES_CREATED_ON,
 						System.currentTimeMillis());
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_MODIFIED_ON,
+				cv.put(DBHelper.COLUMN_ROUTINES_MODIFIED_ON,
 						System.currentTimeMillis());
 
-				extApp.db.insert(extApp.dbHelper.DB_TABLE_ROUTINES, null, cv);
+				extApp.db.insert(DBHelper.DB_TABLE_ROUTINES, null, cv);
 				Context context = getApplicationContext();
 				CharSequence text = getString(R.string.Routine) + " '"
 						+ etRoutinesName.getText().toString() + "' "
@@ -68,13 +68,13 @@ public class AddRoutineActivity extends Activity implements OnClickListener,
 
 				ContentValues cv = new ContentValues();
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_NAME, locRoutineName);
+				cv.put(DBHelper.COLUMN_ROUTINES_NAME, locRoutineName);
 
-				cv.put(extApp.dbHelper.COLUMN_ROUTINES_MODIFIED_ON,
+				cv.put(DBHelper.COLUMN_ROUTINES_MODIFIED_ON,
 						System.currentTimeMillis());
 
-				extApp.db.update(extApp.dbHelper.DB_TABLE_ROUTINES, cv,
-						extApp.dbHelper.COLUMN_ROUTINES_ID + "="
+				extApp.db.update(DBHelper.DB_TABLE_ROUTINES, cv,
+						DBHelper.COLUMN_ROUTINES_ID + "="
 								+ this.cur_routine_id, null);
 				Context context = getApplicationContext();
 				CharSequence text = getString(R.string.Routine) + " '"

@@ -133,8 +133,8 @@ public class DragNDropListView extends ListView {
         mWindowParams.x = 0;
         mWindowParams.y = y - mDragPointOffset;
 
-        mWindowParams.height = WindowManager.LayoutParams.WRAP_CONTENT;
-        mWindowParams.width = WindowManager.LayoutParams.WRAP_CONTENT;
+        mWindowParams.height = android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
+        mWindowParams.width = android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
         mWindowParams.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
                 | WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE
                 | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON

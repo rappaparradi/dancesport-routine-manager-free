@@ -1,21 +1,14 @@
 package com.rappasocial.routinemanager.free;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import com.mobeta.android.dslv.DragSortListView;
 import com.rappasocial.routinemanager.free.R;
 
-import android.app.Activity;
 import android.app.AlertDialog;
-import android.app.ListActivity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.view.Display;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,22 +16,13 @@ import android.view.ViewGroup;
 import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.ListAdapter;
-import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import android.app.TabActivity;
-import android.content.Intent;
-import android.os.Bundle;
 import android.widget.TabHost;
-import android.widget.TabHost.TabSpec;
 
 public class TabHostRoutineEditActivity extends TabActivity {
 	/** Called when the activity is first created. */
@@ -59,7 +43,7 @@ public class TabHostRoutineEditActivity extends TabActivity {
 		setContentView(R.layout.tabhost_routine_edit);
 		
 		   LayoutParams params = new LinearLayout.LayoutParams(
-			    LayoutParams.FILL_PARENT, LayoutParams.WRAP_CONTENT, 0.5f);
+			    android.view.ViewGroup.LayoutParams.FILL_PARENT, android.view.ViewGroup.LayoutParams.WRAP_CONTENT, 0.5f);
 			 
 			  
 			  TabHost.TabSpec spec1;
@@ -194,7 +178,7 @@ public class TabHostRoutineEditActivity extends TabActivity {
 			}
 		});
 		SharedPrefs prefvar = new SharedPrefs();
-		if (Integer.parseInt(prefvar.getSex(this)) == 0) {
+		if (Integer.parseInt(SharedPrefs.getSex(this)) == 0) {
 			
 			
 			getTabHost().setCurrentTab(1);
@@ -232,10 +216,10 @@ public class TabHostRoutineEditActivity extends TabActivity {
 										SaveTheRoutineRaws();
 										ContentValues cv = new ContentValues();
 
-										cv.put(extApp.dbHelper.COLUMN_ROUTINES_MODIFIED_ON,
+										cv.put(DBHelper.COLUMN_ROUTINES_MODIFIED_ON,
 												System.currentTimeMillis());
 
-										extApp.db.update(extApp.dbHelper.DB_TABLE_ROUTINES, cv, extApp.dbHelper.COLUMN_ROUTINES_ID + "=" + extApp.currentRoutineid, null);
+										extApp.db.update(DBHelper.DB_TABLE_ROUTINES, cv, DBHelper.COLUMN_ROUTINES_ID + "=" + extApp.currentRoutineid, null);
 										Context context = getApplicationContext();
 										CharSequence text = getString(R.string.Routine) + " '"
 												+ extApp.getRoutineNameByID(extApp.currentRoutineid) + "' "
@@ -291,8 +275,8 @@ public class TabHostRoutineEditActivity extends TabActivity {
 
 	public void SaveTheRoutineRaws() {
 
-		extApp.db.delete(extApp.dbHelper.DB_TABLE_ROUTINE_RAWS,
-				extApp.dbHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID + "="
+		extApp.db.delete(DBHelper.DB_TABLE_ROUTINE_RAWS,
+				DBHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID + "="
 						+ extApp.currentRoutineid, null);
 		ContentValues cv = new ContentValues();
 
@@ -300,18 +284,18 @@ public class TabHostRoutineEditActivity extends TabActivity {
 
 		for (int i = 0; i < routine_raws.size(); i++) {
 
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID,
 					extApp.currentRoutineid);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID,
 					routine_raws.get(i).figure_id);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_WEIGHT, i);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_TIMING,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_WEIGHT, i);
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_TIMING,
 					routine_raws.get(i).timing);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_COMMENT,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_COMMENT,
 					routine_raws.get(i).comment);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_GENDER,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_GENDER,
 					routine_raws.get(i).gender);
-			extApp.db.insert(extApp.dbHelper.DB_TABLE_ROUTINE_RAWS, null, cv);
+			extApp.db.insert(DBHelper.DB_TABLE_ROUTINE_RAWS, null, cv);
 
 		}
 
@@ -319,18 +303,18 @@ public class TabHostRoutineEditActivity extends TabActivity {
 
 		for (int i = 0; i < routine_raws.size(); i++) {
 
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_ROUTINE_ID,
 					extApp.currentRoutineid);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID,
 					routine_raws.get(i).figure_id);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_WEIGHT, i);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_TIMING,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_WEIGHT, i);
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_TIMING,
 					routine_raws.get(i).timing);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_COMMENT,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_COMMENT,
 					routine_raws.get(i).comment);
-			cv.put(extApp.dbHelper.COLUMN_ROUTINE_RAWS_GENDER,
+			cv.put(DBHelper.COLUMN_ROUTINE_RAWS_GENDER,
 					routine_raws.get(i).gender);
-			extApp.db.insert(extApp.dbHelper.DB_TABLE_ROUTINE_RAWS, null, cv);
+			extApp.db.insert(DBHelper.DB_TABLE_ROUTINE_RAWS, null, cv);
 
 		}
 

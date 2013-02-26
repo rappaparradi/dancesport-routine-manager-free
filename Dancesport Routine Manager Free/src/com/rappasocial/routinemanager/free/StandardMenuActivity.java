@@ -63,10 +63,10 @@ public class StandardMenuActivity extends Activity implements OnClickListener {
 
 		//
 
-		selection = extApp.dbHelper.DB_TABLE_DANCES + "."
-				+ extApp.dbHelper.COLUMN_DANCES_NAME + " = ?";
+		selection = DBHelper.DB_TABLE_DANCES + "."
+				+ DBHelper.COLUMN_DANCES_NAME + " = ?";
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_DANCES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_DANCES, null, selection,
 				selectionArgs, null, null, null);
 
 		if (c != null) {
@@ -75,9 +75,9 @@ public class StandardMenuActivity extends Activity implements OnClickListener {
 				do {
 					Dance locCurDance = new Dance(
 							c.getInt(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_DANCES_ID)),
+									.getColumnIndex(DBHelper.COLUMN_DANCES_ID)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_DANCES_NAME)));
+									.getColumnIndex(DBHelper.COLUMN_DANCES_NAME)));
 					extApp.setcurrentDance(locCurDance);
 
 				} while (c.moveToNext());
@@ -135,11 +135,11 @@ public class StandardMenuActivity extends Activity implements OnClickListener {
 		Cursor c = null;
 
 		final String SQL_STATEMENT = "SELECT COUNT(*) FROM "
-				+ extApp.dbHelper.DB_TABLE_ROUTINES + " as r LEFT JOIN "
-				+ extApp.dbHelper.DB_TABLE_DANCES + " as d " + " ON r."
-				+ extApp.dbHelper.COLUMN_ROUTINES_DANCE_ID + " = d."
-				+ extApp.dbHelper.COLUMN_DANCES_ID + "  WHERE d."
-				+ extApp.dbHelper.COLUMN_DANCES_NAME + "=?";
+				+ DBHelper.DB_TABLE_ROUTINES + " as r LEFT JOIN "
+				+ DBHelper.DB_TABLE_DANCES + " as d " + " ON r."
+				+ DBHelper.COLUMN_ROUTINES_DANCE_ID + " = d."
+				+ DBHelper.COLUMN_DANCES_ID + "  WHERE d."
+				+ DBHelper.COLUMN_DANCES_NAME + "=?";
 		c = extApp.db.rawQuery(SQL_STATEMENT, new String[] { DanceName });
 
 		if (c != null) {
@@ -161,20 +161,20 @@ public class StandardMenuActivity extends Activity implements OnClickListener {
 	public void RefrashCountRoutines() {
 		
 		btMenuWaltz.setText(getResources().getString(R.string.btMenuWaltz)
-				+ " (" + GetCountRoutines(extApp.dbHelper.Waltz) + ")");
+				+ " (" + GetCountRoutines(DBHelper.Waltz) + ")");
 
 		btMenuTango.setText(getResources().getString(R.string.btMenuTango)
-				+ " (" + GetCountRoutines(extApp.dbHelper.Tango) + ")");
+				+ " (" + GetCountRoutines(DBHelper.Tango) + ")");
 
 		btMenuVienneseWaltz.setText(getResources().getString(R.string.btMenuVienneseWaltz)
-				+ " (" + GetCountRoutines(extApp.dbHelper.VienneseWaltz) + ")");
+				+ " (" + GetCountRoutines(DBHelper.VienneseWaltz) + ")");
 
 		btMenuFoxtrot.setText(getResources().getString(
 				R.string.btMenuFoxtrot)
-				+ " (" + GetCountRoutines(extApp.dbHelper.Foxtrot) + ")");
+				+ " (" + GetCountRoutines(DBHelper.Foxtrot) + ")");
 
 		btMenuQuickstep.setText(getResources().getString(R.string.btMenuQuickstep) + " ("
-				+ GetCountRoutines(extApp.dbHelper.Quickstep) + ")");
+				+ GetCountRoutines(DBHelper.Quickstep) + ")");
 
 	}
 

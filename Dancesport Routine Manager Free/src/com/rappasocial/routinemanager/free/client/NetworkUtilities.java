@@ -25,10 +25,8 @@ import android.os.Handler;
 import android.util.Log;
 
 import com.rappasocial.routinemanager.authenticator.free.AuthenticatorActivity;
-import com.rappasocial.routinemanager.free.Dance;
+import com.rappasocial.routinemanager.free.DBHelper;
 import com.rappasocial.routinemanager.free.ExtendedApplication;
-import com.rappasocial.routinemanager.free.Routine;
-
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
@@ -48,7 +46,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.Iterator;
 import java.util.List;
 import java.util.TimeZone;
 
@@ -89,7 +86,7 @@ public class NetworkUtilities extends DrupalJSONServerNetworkUtilityBase {
 			}
 		};
 		// run on background thread.
-		return NetworkUtilities.performOnBackgroundThread(runnable);
+		return DrupalJSONServerNetworkUtilityBase.performOnBackgroundThread(runnable);
 	}
 
 	/**
@@ -278,7 +275,7 @@ public class NetworkUtilities extends DrupalJSONServerNetworkUtilityBase {
 
 		Cursor c = null;
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_FIGURES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_FIGURES, null, selection,
 				null, null, null, null);
 
 		try {
@@ -293,35 +290,35 @@ public class NetworkUtilities extends DrupalJSONServerNetworkUtilityBase {
 						jsonsingleFigObject
 								.put("_id",
 										c.getInt(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_ID)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_ID)));
 						jsonsingleFigObject
 								.put("_id_global",
 										c.getInt(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_ID_GLOBAL)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_ID_GLOBAL)));
 						jsonsingleFigObject
 								.put("name",
 										c.getString(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_NAME)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_NAME)));
 						jsonsingleFigObject
 								.put("dance_id",
 										c.getInt(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_DANCE_ID)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_DANCE_ID)));
 						jsonsingleFigObject
 								.put("yt_id",
 										c.getString(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_YT_ID)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_YT_ID)));
 						jsonsingleFigObject
 								.put("created_on",
 										c.getLong(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_CREATED_ON)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_CREATED_ON)));
 						jsonsingleFigObject
 								.put("modified_on",
 										c.getLong(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_MODIFIED_ON)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_MODIFIED_ON)));
 						jsonsingleFigObject
 								.put("del_mark",
 										c.getInt(c
-												.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_DEL_MARK)));
+												.getColumnIndex(DBHelper.COLUMN_FIGURES_DEL_MARK)));
 
 						jsonArr.put(jsonsingleFigObject);
 

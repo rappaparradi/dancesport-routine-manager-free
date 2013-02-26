@@ -1,25 +1,12 @@
 package com.rappasocial.routinemanager.free;
 
-import java.util.ArrayList;
-
 import com.rappasocial.routinemanager.free.R;
-import com.rappasocial.routinemanager.free.SelectFiguresActivity.FiguresSelectionAdapter;
-
 import android.app.Activity;
-import android.content.Context;
-import android.database.Cursor;
 import android.os.Bundle;
-import android.util.SparseBooleanArray;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ListView;
-import android.widget.TextView;
 
 public class TimingInputActivity extends Activity implements OnClickListener {
 	
@@ -32,7 +19,8 @@ public class TimingInputActivity extends Activity implements OnClickListener {
 	
 
 	
-	 public void onCreate(Bundle savedInstanceState) {
+	 @Override
+	public void onCreate(Bundle savedInstanceState) {
 		    super.onCreate(savedInstanceState);
 		    setContentView(R.layout.input_timing_field);
 

@@ -14,7 +14,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.provider.Settings.Secure;
 import android.text.Editable;
@@ -28,7 +27,6 @@ import android.view.View.OnClickListener;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -56,6 +54,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 	LinearLayout llRoutinesListActionPanel;
 	Button btAddNewFigure, btRLback;
 
+	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.crud_figures_list);
@@ -130,7 +129,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 
 		TextView tvCurDanceChar = (TextView) findViewById(R.id.tvCurDanceChar);
 
-		if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Samba) == 0) {
+		if ((curDance.name).compareToIgnoreCase(DBHelper.Samba) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_orange));
@@ -140,7 +139,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_orange));
 			tvCurDanceChar.setText("S");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.ChaCha) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.ChaCha) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_blue));
@@ -150,7 +149,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_blue));
 			tvCurDanceChar.setText("Ch");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Rumba) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Rumba) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_purple));
@@ -161,7 +160,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 			tvCurDanceChar.setText("R");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.PasoDoble) == 0) {
+				.compareToIgnoreCase(DBHelper.PasoDoble) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_red));
@@ -171,7 +170,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_red));
 			tvCurDanceChar.setText("P");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Jive) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Jive) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_yellow));
@@ -181,7 +180,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_yellow));
 			tvCurDanceChar.setText("J");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Waltz) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Waltz) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_orange));
@@ -191,7 +190,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_orange));
 			tvCurDanceChar.setText("W");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Tango) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Tango) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_red));
@@ -202,7 +201,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 			tvCurDanceChar.setText("T");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.VienneseWaltz) == 0) {
+				.compareToIgnoreCase(DBHelper.VienneseWaltz) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_purple));
@@ -212,7 +211,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 					.getDrawable(R.drawable.custom_button_purple));
 			tvCurDanceChar.setText("V");
 
-		} else if ((curDance.name).compareToIgnoreCase(extApp.dbHelper.Foxtrot) == 0) {
+		} else if ((curDance.name).compareToIgnoreCase(DBHelper.Foxtrot) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_blue));
@@ -223,7 +222,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 			tvCurDanceChar.setText("F");
 
 		} else if ((curDance.name)
-				.compareToIgnoreCase(extApp.dbHelper.Quickstep) == 0) {
+				.compareToIgnoreCase(DBHelper.Quickstep) == 0) {
 
 			llRoutinesListActionPanel.setBackgroundDrawable(getResources()
 					.getDrawable(R.drawable.action_panel_bg_yellow));
@@ -260,14 +259,14 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 		// String[] selectionArgs = null;
 		// String groupBy = null;
 		// String having = null;
-		String orderBy = extApp.dbHelper.COLUMN_FIGURES_NAME;
+		String orderBy = DBHelper.COLUMN_FIGURES_NAME;
 
 		// курсор
 		Cursor c = null;
 		Dance curDance = extApp.getcurrentDance();
 		if (curDance != null) {
 
-			selection = extApp.dbHelper.COLUMN_FIGURES_DANCE_ID + " = "
+			selection = DBHelper.COLUMN_FIGURES_DANCE_ID + " = "
 					+ curDance.id;
 
 		} else {
@@ -275,7 +274,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 			selection = null;
 		}
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_FIGURES, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_FIGURES, null, selection,
 				null, null, null, orderBy);
 
 		if (c != null) {
@@ -285,12 +284,12 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 
 					figures.add(new Figure(
 							c.getInt(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_ID)),
+									.getColumnIndex(DBHelper.COLUMN_FIGURES_ID)),
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_NAME)),
+									.getColumnIndex(DBHelper.COLUMN_FIGURES_NAME)),
 							curDance.id,
 							c.getString(c
-									.getColumnIndex(extApp.dbHelper.COLUMN_FIGURES_DESCRIPTION))));
+									.getColumnIndex(DBHelper.COLUMN_FIGURES_DESCRIPTION))));
 
 				} while (c.moveToNext());
 			}
@@ -317,7 +316,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 		Dance curDance = extApp.getcurrentDance();
 		if (curDance != null) {
 
-			selection = extApp.dbHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID + " = "
+			selection = DBHelper.COLUMN_ROUTINE_RAWS_FIGURE_ID + " = "
 					+ figure_id;
 
 		} else {
@@ -325,7 +324,7 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 			selection = null;
 		}
 
-		c = extApp.db.query(extApp.dbHelper.DB_TABLE_ROUTINE_RAWS, null, selection,
+		c = extApp.db.query(DBHelper.DB_TABLE_ROUTINE_RAWS, null, selection,
 				null, null, null, null);
 
 		if (c != null) {
@@ -609,8 +608,8 @@ public class CrudFiguresActivity extends Activity implements OnClickListener,
 		
 		
 
-		extApp.db.delete(extApp.dbHelper.DB_TABLE_FIGURES,
-				extApp.dbHelper.COLUMN_FIGURES_ID + "="
+		extApp.db.delete(DBHelper.DB_TABLE_FIGURES,
+				DBHelper.COLUMN_FIGURES_ID + "="
 						+ extApp.currentRoutineid, null);
 		
 		figures.remove(extApp.currentRoutineRawId);
